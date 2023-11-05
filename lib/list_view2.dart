@@ -70,18 +70,34 @@ class CustomGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: GridView.count(
-        padding: EdgeInsets.zero,
-        crossAxisCount: 2,
-        children: const [
-          CustomCard(),
-          CustomCard(),
-          CustomCard(),
-          CustomCard(),
-          CustomCard(),
-          CustomCard(),
-          CustomCard(),
-          CustomCard(),
+      child: Stack(
+        children: [
+          GridView.count(
+            physics: const BouncingScrollPhysics(),
+            padding: EdgeInsets.symmetric(horizontal: width * 0.015),
+            crossAxisCount: 2,
+            crossAxisSpacing: width * 0.03,
+            children: const [
+              CustomCard(),
+              CustomCard(),
+              CustomCard(),
+              CustomCard(),
+              CustomCard(),
+              CustomCard(),
+              CustomCard(),
+              CustomCard(),
+              CustomCard(),
+              CustomCard(),
+              CustomCard(),
+              CustomCard(),
+            ],
+          ),
+          Positioned(
+              right: 0,
+              child: Image.asset(
+                'assets/images/side_arrow.png',
+                height: height * 0.8,
+              )),
         ],
       ),
     );
