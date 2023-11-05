@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:game_task/list_view1.dart';
+import 'package:game_task/list_view2.dart';
 import 'package:game_task/size.dart';
 
 void main() {
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Game Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        fontFamily: 'Helvetica Neue',
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(title: 'Game Demo'),
@@ -47,15 +49,18 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             MaterialButton(
-              color: Colors.grey,
-                onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const ListView1())),
-              child: const Text("List View 1")),
-
-
-            SizedBox(height: height * 0.05,),
-
-
+                color: Colors.grey,
+                onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const ListView1())),
+                child: const Text("List View 1")),
+            SizedBox(
+              height: height * 0.05,
+            ),
+            MaterialButton(
+                color: Colors.grey,
+                onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const ListView2())),
+                child: const Text("List View 2")),
           ],
         ),
       ),

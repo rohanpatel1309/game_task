@@ -37,12 +37,12 @@ class MapText extends StatelessWidget {
     return Container(
       width: double.infinity,
       color: const Color(0xFF049ECC),
-      padding: EdgeInsets.only(top: height * 0.05),
+      padding: EdgeInsets.only(top: height * 0.06, bottom: height * 0.005),
       child: const Text(
         "Maps",
         textAlign: TextAlign.center,
         style: TextStyle(
-            color: Colors.white, fontSize: 35, fontWeight: FontWeight.w700),
+            color: Colors.white, fontSize: 31, fontWeight: FontWeight.w700),
       ),
     );
   }
@@ -80,7 +80,8 @@ class CustomCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: width * 0.04, vertical: height * 0.015),
+      padding: EdgeInsets.symmetric(
+          horizontal: width * 0.04, vertical: height * 0.015),
       child: Column(
         children: [
           Stack(
@@ -103,7 +104,7 @@ class CustomCard extends StatelessWidget {
                   left: width * 0.04,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children:  [
+                    children: [
                       Text("The Bridge (Map/Minigame)",
                           style: TextStyle(
                               color: Colors.white,
@@ -172,12 +173,16 @@ class CustomButton extends StatelessWidget {
             SizedBox(
               width: width * 0.015,
             ),
-            Text(
-              text,
-              style: const TextStyle(
-                  color: Color(0xFFFCA3A3),
-                  fontSize: 18,
-                  fontWeight: FontWeight.w400),
+            Padding(
+              padding:
+                  EdgeInsets.only(top: text == "Favorite" ? height * 0.006 : 0),
+              child: Text(
+                text,
+                style: const TextStyle(
+                    color: Color(0xFFFCA3A3),
+                    fontSize: 20,
+                    fontWeight: FontWeight.w400),
+              ),
             )
           ],
         ),
